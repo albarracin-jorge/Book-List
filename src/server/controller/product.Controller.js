@@ -1,78 +1,59 @@
-//GET
-let products = [
-  {
-      name: "El imperio Final",
-      img: "/imperiofinal.jpg"
-  },
-  {
-      name: "El pozo de la ascensión",
-      img: "/pozoascension.jpg"
-  },
-  {
-      name: "El héroe de las eras",
-      img: "/heroeeras.jpg"
-  },
-  {
-      name: "Aleación de ley",
-      img: "/aleacionley.jpg"
-  },
-  {
-      name: "Sombras de identidad",
-      img: "/sombrasidentidad.jpg"
-  },
-  {
-      name: "Brazales de duelo",
-      img: "/brazalesduelo.jpg"
-  },
-]
+import {DB_URL, saveBook, findAllBooks, updateBook, deleteBook} from '../model/product.Model'
 
 export async function getAllProducts(req){
+
+  const query = await findAllBooks(DB_URL);
   return {
-    status: "OK",
-    message: 'You get all products! 😀🎊',
-    content: products
+    ok: true,
+    error: false,
+    // message: 'You get all products! 😀🎊',
+    message: query
   }
 }
 
 export async function getOneProduct(req){
   return {
-    status: "OK",
+    ok: true,
+    error: false,
     message: 'You get one product! 😀✨'
   }
 }
 
 //POST
 export async function createProduct(req){
-  products.push(req)
+  const query = await saveBook(DB_URL, req)
   return {
-    status: "OK",
-    message: 'You created one product successfully! 😎🍹'
+    ok: true,
+    error: false,
+    // message: 'You created one product successfully! 😎🍹',
+    message: query
   }
 }
 
 export async function saveImage(req){
   return{
-    status: "OK",
+    ok: true,
+    error: false,
     message: 'You save one image from the product successfully! 😃🖼️'
   }
 }
 
 export async function modifyProduct(req){
-  console.log(req);
-  let index = req.index
-  if(req.name){  products[index].name = req.name }
-  if(req.img){  products[index].img = req.img } 
+  const query = await updateBook(DB_URL, req)
   return {
-    status: "OK",
-    message: 'You modify one product successfully! 🤓🖋️'
+    ok: true,
+    error: false,
+    // message: 'You modify one product successfully! 🤓🖋️',
+    message: query
   }
 }
 
 export async function deleteProduct(req){
-  let index = req.index
-  products.splice(index,1);
+  const query = await deleteBook(DB_URL, req)
   return {
-    status: "OK",
-    message: 'You delete one product successfully! 😬☠️'
+    ok: true,
+    error: false,
+    // message: 'You delete one product successfully! 😬☠️',
+    message: query
   }
 }
