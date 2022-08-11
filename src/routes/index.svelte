@@ -1,6 +1,5 @@
 <script>
 	import '../assets/app.css'
-	import Test from "$lib/Test.svelte";
 	import Header from "$lib/Header.svelte";
 	import Product from "$lib/Product.svelte";
 
@@ -34,8 +33,6 @@
 {:catch error}
     <p>Ups! Algo anduvo mal 😖</p>
 {/await}
-
-<Test/>
 
 <style>
 	@media(min-width: 900px){
