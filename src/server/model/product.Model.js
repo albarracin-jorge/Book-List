@@ -6,7 +6,7 @@ export const DB_URL ='mongodb+srv://admin_user:sharingan@cluster0.r6kcpw1.mongod
 const bookSchema = new Schema({
   title: String,
   launch_date: String,
-  img_path: String,
+  image_path: String,
   hidden: {type: Boolean, default: false}
 })
 
@@ -29,7 +29,7 @@ export async function saveBook(URL, req){
   const addBook = new Book({
     title: req.title,
     launch_date: req.launch_date,
-    img_path: req.img_path
+    image_path: req.image_path
   })
 
   await addBook.save()
@@ -48,8 +48,8 @@ export async function updateBook(URL, req){
       } 
     })  
   }
-  if(req.img_path){
-    Book.findByIdAndUpdate({_id: req._id}, {$set:{img_path: req.img_path}}, (err, doc)=>{
+  if(req.image_path){
+    Book.findByIdAndUpdate({_id: req._id}, {$set:{image_path: req.image_path}}, (err, doc)=>{
       if(err){
         return { ok: false, error: 'Update go wrong' }
       } 
@@ -63,10 +63,3 @@ export async function deleteBook(URL, req){
   const query = await Book.findByIdAndDelete({_id: req._id})
   return query
 }
-
-
-
-
-
-
-

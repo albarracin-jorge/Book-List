@@ -8,7 +8,8 @@
 		const data = await response.json()
 
 		if(response.ok){
-			return data
+			console.log(data.message);
+			return data.message
 		}else{
 			throw new Error(data)
 		}
@@ -20,12 +21,12 @@
 	<p>Cargando productos...🤓</p>
 {:then products} 
 	<div class="content">
-		{#each products.content as product, i}
+		{#each products.data as product, i}
 			<Product
-				name={product.name}
-				image={product.img}
+				name={product.title}
+				image={product.image_path}
 			/>
-			{#if i+1 != products.content.length}
+			{#if i+1 != products.data.length}
 				<hr class="hr" size="1">
 			{/if}
 		{/each}    
