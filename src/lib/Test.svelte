@@ -1,11 +1,15 @@
 <script>
-	import {variable} from './store.js'
-
-	let recibirVariable
-
-	const unsuscribe = variable.subscribe(value =>{
-		recibirVariable = value
-	})
+	export let name
+	export let lastname
+	export let age
 </script>
 
-<h1>{recibirVariable}</h1>
+<section>
+	<p>El individuo tenia {age} años y se llamaba {name} {lastname}</p>
+</section>
+
+<style>
+	section{
+		margin: 25%;
+	}
+</style>
