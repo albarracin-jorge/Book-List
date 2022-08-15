@@ -1,11 +1,14 @@
 <script>
-	export let name
-	export let lastname
-	export let age
+	import {testStore} from '../storage/store.js'
+
+	function changeStoreVariable(){
+		$testStore = 'No es pakito'
+	}
 </script>
 
 <section>
-	<p>El individuo tenia {age} años y se llamaba {name} {lastname}</p>
+	<p>El nombre de la variable de store es: {$testStore}</p>
+	<button on:click={changeStoreVariable}>Cambiar testStore</button>
 </section>
 
 <style>

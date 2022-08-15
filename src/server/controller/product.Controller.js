@@ -11,22 +11,18 @@ export async function getAllProducts(req){
   }
 }
 
-export async function getOneProduct(req){
-  return {
-    ok: true,
-    error: false,
-    message: 'You get one product! 😀✨'
-  }
-}
-
 //POST
 export async function createProduct(req){
-  const query = await saveBook(DB_URL, req)
+
+  console.log(req.image_path);
+  req.image_path = req.image_path.slice(10, -10)
+  console.log(req.image_path);
+  // const query = await saveBook(DB_URL, req)
   return {
     ok: true,
     error: false,
     // message: 'You created one product successfully! 😎🍹',
-    message: query
+    // message: query
   }
 }
 

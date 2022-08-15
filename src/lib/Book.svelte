@@ -4,6 +4,8 @@
 	export let image;
 	export let launch_date;
 
+	import {reloadBook} from '../storage/store.js'
+
 	async function handleDelete(_id){
 		const response = await fetch('http://127.0.0.1:5173/api', {
 			method: 'DELETE',
@@ -15,7 +17,8 @@
 		const data = await response.json()
 
 		if(data.ok){
-			alert('Libro eliminado satisfactoriamente')
+			// alert('Libro eliminado satisfactoriamente')
+			$reloadBook = true
 		}
 		if(data.error){
 			alert('Hubo un error')
@@ -33,7 +36,7 @@
 		<div class="btn-display">
 			<button>Modificar</button>
 			<button on:click={handleDelete(_id)}>Eliminar</button>  
-		</div>  
+		</div>
 	</div>
 </label>
 

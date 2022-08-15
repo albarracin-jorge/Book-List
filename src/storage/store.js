@@ -1,3 +1,5 @@
-import { writable } from "svelte/store";
+import { writable, readable } from "svelte/store";
 
-export const variable = writable('Julian');
+export const testStore = writable('Pakito')
+
+export const reloadBook = writable(false);

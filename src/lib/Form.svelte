@@ -1,12 +1,27 @@
 <script>
-    // import { prevent_default } from "svelte/internal";
-    let title;
-    let year;
-    let file;
-    function handleSubmit(){
-      alert(`El titulo es: ${title}, el año es: ${year} y la imagen es: ${file}`)
-    }
+  import {reloadBook} from '../storage/store.js'
+  let title;
+  let year;
+  let file;
 
+  async function handleSubmit(){
+    // alert(`El titulo es: ${title}, el año es: ${year} y la imagen es: ${file}`)
+    const response = await fetch('http://127.0.0.1:5173/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: title,
+        launch_date: year,
+        image_path: file
+      })
+    })
+    const data = await response.json()
+
+    if(data.ok) $reloadBook = true
+    if(data.error) alert('Hubo un error')
+  }
   
   </script>
   
