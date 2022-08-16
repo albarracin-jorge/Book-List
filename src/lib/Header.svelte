@@ -32,6 +32,7 @@
   }
 
   header{
+    height: 100%;
     padding: 2vh 0;
     background-color: #371B58;
     color: #FEFBF6;

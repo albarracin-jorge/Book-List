@@ -2,6 +2,7 @@
   import {reloadBook} from '../storage/store.js'
   let title;
   let year;
+  let author;
   let file;
 
   async function handleSubmit(){
@@ -30,6 +31,9 @@
       <div>
         <label for="title">
           <input type="text" name='title' bind:value={title} placeholder="Título del libro">
+        </label>
+        <label for="title">
+          <input type="text" name='title' bind:value={author} placeholder="Autor">
         </label>
         <label for="release">
           <input type="text" name='release' bind:value={year} placeholder="Año de publicación">

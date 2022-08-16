@@ -9,6 +9,7 @@
   }
 
   footer{
+    height: 10vh;
     background-color: #371B58;
     color: #FEFBF6;
     padding: 5vh 0;
