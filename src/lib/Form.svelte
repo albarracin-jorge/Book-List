@@ -45,13 +45,12 @@
   
   <style>
     form{
-      /* height: 68vh; */
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 5vh 5vw;
       padding: 1em;
-      background-color:#cccc00;
+      background-color:#4C3575;
       border-radius: 5px;
     }
 
@@ -59,11 +58,20 @@
       display: flex;
       flex-direction: column;
     }
+
+    button{
+      background-color: #371B58;
+    }
+    button:hover{
+      background-color: #5B4B8A
+    }
   
     input{
-      padding: .8em 1em;
+      padding: .5em 1em;
       text-align: center;
       font-size: 1em;
+      background-color: #5B4B8A;
+      border: solid 1px grey;
     }
   
     input::placeholder{
@@ -71,10 +79,10 @@
     }
   
     p{
-      background-color: #3B3B3B;
+      background-color: #5B4B8A;
       color: #e6e6e6;
-      padding: .7em 1em;
-      border-radius: 2px;
+      padding: .35em 1em;
+      /* border-radius: 2px; */
       cursor: pointer;
       border: solid 1px grey;
     }

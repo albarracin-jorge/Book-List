@@ -17,7 +17,6 @@
 		const data = await response.json()
 
 		if(data.ok){
-			// alert('Libro eliminado satisfactoriamente')
 			$reloadBook = true
 		}
 		if(data.error){
@@ -74,6 +73,7 @@
 
 	button{
 		margin: 5px;
+		background-color: #5B4B8A;
 	}
 
 	@media (min-width: 900px){

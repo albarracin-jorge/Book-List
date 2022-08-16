@@ -47,11 +47,9 @@
 					<hr class="hr" size="1">
 				{/if}
 			{/each}
-			{$reloadBook = false}    
 		</div>
 	{:catch error}
 			<p>Ups! Algo anduvo mal 😖</p>
-			{$reloadBook = false} 
 	{/await}	
 {/key}
 <Footer/>
@@ -71,6 +69,7 @@
 
 	hr{
 		margin: 5vh 20vw 2vh 20vw;
+		background-color: #371B58;
 	}
 
 	p{
