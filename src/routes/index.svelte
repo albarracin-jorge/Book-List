@@ -1,6 +1,7 @@
 <script>
 	import '../assets/app.css'
 	import Header from "$lib/Header.svelte";
+	import Footer from '../lib/Footer.svelte';
 	import Book from "$lib/Book.svelte";
 	import {reloadBook} from '../storage/store.js'
 
@@ -53,6 +54,7 @@
 			{$reloadBook = false} 
 	{/await}	
 {/key}
+<Footer/>
 
 <style>
 	@media(min-width: 900px){

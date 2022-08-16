@@ -8,26 +8,14 @@
     function handlerClick(){
       if(!display_form) return display_form = true
       if(display_form) return display_form = false
-    }
-  
-    // function handlerClick(){
-    //   if(!visible) return visible = true
-    //   if(visible) return visible = false 
-    // }
-  
+    }  
   </script>
   <header>
     <div class="header">
-      <img src="/ae-logo.svg" alt="aenima-logo">
       <button on:click={handlerClick}>Agregar libro 📖</button>   
     </div>
     {#if display_form}
-      <!-- <div
-        transition:fly="{{ y: -200, duration: 2000 }}"
-      > -->
-        <Form/> 
-      <!-- </div> -->
-        
+      <Form/> 
     {/if}   
   </header>
   
