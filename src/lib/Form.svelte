@@ -28,7 +28,6 @@
   
   <div>
     <form on:submit|preventDefault={handleSubmit}>
-      <div>
         <label for="title">
           <input type="text" name='title' bind:value={title} placeholder="Título del libro">
         </label>
@@ -42,7 +41,6 @@
           <p>Añadir portada</p> 
           <input accept="image/png, image/jpg, image/jpeg" id="file" type="file" class="input-file" bind:value={file}>
         </label>
-      </div>
       <button>Agregar!</button>
     </form>
   </div>
@@ -50,17 +48,13 @@
   <style>
     form{
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 5vh 5vw;
+      margin: 1em;
       padding: 1em;
       background-color:#4C3575;
       border-radius: 5px;
-    }
-
-    form>div{
-      display: flex;
-      flex-direction: column;
     }
 
     button{
@@ -85,7 +79,7 @@
     p{
       background-color: #5B4B8A;
       color: #e6e6e6;
-      padding: .35em 1em;
+      padding: .35em 3.8em;
       /* border-radius: 2px; */
       cursor: pointer;
       border: solid 1px grey;
