@@ -16,7 +16,6 @@
 		}
 	}
 
-	//Update components
 	let unique = {}
 
 	$: if($reloadBook == true){
@@ -62,10 +61,6 @@
 	hr{
 		margin: 5vh 20vw 2vh 20vw;
 		background-color: #371B58;
-	}
-
-	p{
-		height: 73vh;
 	}
 
 	@media(min-width: 900px){
