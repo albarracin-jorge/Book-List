@@ -19,10 +19,6 @@
 	//Update components
 	let unique = {}
 
-	function restart(){
-		$reloadBook = true
-	}
-
 	$: if($reloadBook == true){
 		unique = {}
 		$reloadBook = false
@@ -53,7 +49,6 @@
 		{/await}	
 	{/key}	
 <Footer/>	
-
 
 <style>
 	/* div{
